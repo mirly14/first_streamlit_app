@@ -56,4 +56,14 @@ streamlit.dataframe(my_data_rows)
 streamlit.header("What fruit would you like info about?")
 
 add_my_fruit = streamlit.text_input('What fruit would you like info about?','Kiwi')
-streamlit.write('The user entered ', add_my_fruit) # put the fruit u want
+streamlit.write('The user entered ', add_my_fruit) # put the fruit u want 
+
+import requests
+add_my_fruit_response = requests.get("https://fruityvice.com/api/fruit/"+ add_my_fruit)
+
+# take the json ver of the response and normalized
+add_my_fruit_normalized = pandas.json_normalize(add_my_fruit_response.json())
+# output it the screen as a table
+streamlit.dataframe(add_my_fruit_normalized)
+
+
