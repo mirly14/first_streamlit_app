@@ -60,6 +60,11 @@ if streamlit.button('Get Fruit Load List'):
     streamlit.dataframe(my_data_rows)
 
 
+
+streamlit.stop ()
+
+
+
 #New Section to display fruityvice api response
 streamlit.header("What fruit would you like info about?")
 
