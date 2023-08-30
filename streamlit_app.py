@@ -62,11 +62,6 @@ if streamlit.button('Get Fruit Load List'):
 
 
 
-
-
-
-
-
 #Allow the end user to add fruit to the list
 def insert_row_snowflake(new_fruit):
     with my_cnx.cursor() as my_cur:
@@ -80,23 +75,5 @@ if stremlit.button('Add a Fruit to the list'):
     streamlit.text(back_from_function)
     
 
-
-
-
-
-
-
-#New Section to display fruityvice api response
-streamlit.header("What fruit would you like info about?")
-
-#Import request
-add_my_fruit_response = requests.get("https://fruityvice.com/api/fruit/"+ add_my_fruit)
-
-# take the json ver of the response and normalized
-add_my_fruit_normalized = pandas.json_normalize(add_my_fruit_response.json())
-# output it the screen as a table
-streamlit.dataframe(add_my_fruit_normalized)
-
-streamlit.write() # put the fruit u want 
 
 
