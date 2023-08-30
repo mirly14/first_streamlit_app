@@ -68,3 +68,4 @@ streamlit.dataframe(add_my_fruit_normalized)
 
 streamlit.write('Thanks for adding ', add_my_fruit) # put the fruit u want 
 
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
